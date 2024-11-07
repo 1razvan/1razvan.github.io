@@ -17,3 +17,10 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
+
+<ul>
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+  </li>
+{% endfor %}
+</ul>
