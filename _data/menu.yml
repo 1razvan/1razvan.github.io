@@ -21,6 +21,7 @@ entries:
   - title: posts by category
     entries:
       - title: example2
+        url: example2-archive.html
         post_list:
           category: example2
           show_more: true
