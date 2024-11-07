@@ -18,14 +18,15 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-<ul>
-{% for category in site.categories %}
-  <li><a name="{{ category | first }}">{{ category | first }}</a>
-    <ul>
-    {% for post in category.last %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-</ul>
+  - title: categories
+    entries:
+      - title: Cyber Systems Architecture and Organisation
+        url: archive-Cyber-Systems-Architecture-and-Organisation.html
+      - title: Information Risk Management
+        url: archive-Information-Risk-Management.md
+      - title: Networks, Communications and Cyber Defence
+        url: archive-Networks-Communications-and-Cyber-Defence copy.md
+      - title: Operating Systems in the Cyber Context
+        url: archive-Operating-Systems-in-the-Cyber-Context.md
+      - title: Software Development and Security
+        url: archive-Software-Development-and-Security.md
