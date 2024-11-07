@@ -18,26 +18,26 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: posts by category
-    entries:
-      - title: example2
-        url: example2-archive.html
-        post_list:
-          category: example2
-          show_more: true
-          show_more_text: See more posts...
-          show_more_url: example2-archive.html
 
-  - title: rss
-    url: feed.xml
-  
-  - title: another list
-    entries:
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
-  - title: PRO TIP
-    entries:
-      - title: to edit this menu, edit _data/menu.yml file
+  - title: category test 1
+    <ul>
+    {% for category in site.categories %}
+      <li><a name="{{ category | first }}">{{ category | first }}</a>
+        <ul>
+        {% for post in category.last %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+    </ul>
+
+  - title: category test 2
+    <h5>Categories</h5>
+    {% for category in site.categories %}
+        {% assign cat = category[0] %}
+        <h6><a href="#">{{ cat }}</a></h6>
+        {% for post in site.categories[cat] %}
+            <a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date }}</small>
+        {% endfor %}
+    {% endfor %}
